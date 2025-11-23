@@ -1,10 +1,7 @@
 import requests
-import pytest
 
-BASE_URL = "https://dummyjson.com"
-
-def test_login_verify_token():
-    loginUrl = f"{BASE_URL}/auth/login"
+def test_login_verify_token(base_url):
+    loginUrl = f"{base_url}/auth/login"
 
     payload = {
         "username": "emilys",
@@ -15,7 +12,7 @@ def test_login_verify_token():
     response = requests.post(loginUrl, json=payload)
     logindata = response.json()
 
-    me_url = f"{BASE_URL}/auth/me"
+    me_url = f"{base_url}/auth/me"
     headers = {
         "Authorization" : f"Bearer {logindata["accessToken"]}"
     }

@@ -1,10 +1,7 @@
 import requests
-import pytest
 
-BASE_URL = "https://dummyjson.com"
-
-def test_invalid_password():
-    url = f"{BASE_URL}/auth/login"
+def test_invalid_password(base_url):
+    url = f"{base_url}/auth/login"
 
     payload = {
         "username": "emilys",

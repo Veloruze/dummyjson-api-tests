@@ -1,10 +1,7 @@
 import requests
-import pytest
 
-BASE_URL = "https://dummyjson.com"
-
-def test_get_all_users():
-    url = f"{BASE_URL}/users"
+def test_get_all_users(base_url):
+    url = f"{base_url}/users"
 
     response = requests.get(url)
     data = response.json()

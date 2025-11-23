@@ -1,14 +1,11 @@
 import requests
-import pytest
 
-BASE_URL = "https://dummyjson.com"
-
-def test_create_new_user():
-    url = f"{BASE_URL}/users/add"
+def test_create_new_user(base_url):
+    url = f"{base_url}/users/add"
 
     payload = {
-        "firstName": 'Ahmad',
-        "lastName": 'Al Afif',
+        "firstName": "Ahmad",
+        "lastName": "Al Afif",
         "age": 27,
     }
 

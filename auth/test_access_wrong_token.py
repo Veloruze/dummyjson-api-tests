@@ -1,10 +1,7 @@
 import requests
-import pytest
 
-BASE_URL = "https://dummyjson.com"
-
-def test_access_wrong_token():
-    url = f"{BASE_URL}/auth/me"
+def test_access_wrong_token(base_url):
+    url = f"{base_url}/auth/me"
 
     headers = {
         "Authorization" : f"Bearer aokwokwokwokwinvalidsiroakwokw"

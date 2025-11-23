@@ -1,10 +1,7 @@
 import requests
-import pytest
 
-BASE_URL = "https://dummyjson.com"
-
-def test_get_user_pagination():
-    url = f"{BASE_URL}/users?limit=10&skip=5"
+def test_get_user_pagination(base_url):
+    url = f"{base_url}/users?limit=10&skip=5"
 
     response = requests.get(url)
     data = response.json()
