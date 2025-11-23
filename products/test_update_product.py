@@ -6,7 +6,7 @@ def test_update_product(base_url):
         "title": "iPhone Galaxy +"
     }
 
-    response = requests.put(url, json=payload)
+    response =  requests.put(url, json=payload, timeout=10)
     data = response.json()
 
     assert response.status_code == 200

@@ -6,7 +6,7 @@ def test_add_product(base_url):
         "title": "BMW Pencil"
     }
 
-    response = requests.post(url, json=payload)
+    response = requests.post(url, json=payload, timeout=10)
     data = response.json()
 
     assert response.status_code == 201

@@ -20,7 +20,7 @@ def test_login_verify_token(base_url):
     me_response = requests.get(me_url, headers=headers)
     me_data = me_response.json()
 
-    assert response.status_code == 200
+    assert me_response.status_code == 200
     required_fields = ["id", "username", "email", "firstName", "lastName", "gender", "image"]
     for field in required_fields:
         assert field in me_data, f"Missing user field: {field}"

@@ -9,11 +9,12 @@ def test_create_new_user(base_url):
         "age": 27,
     }
 
-    response = requests.post(url, json=payload)
+    response = requests.post(url, json=payload, timeout=10)
     data = response.json()
 
     assert response.status_code == 201
-
-    required_fields = ["id", "firstName", "lastName", "age"]
-    for field in required_fields:
-        assert field in data, f"Missing user field: {field}"
+    assert "id" in data
+    
+    assert data["firstName"] == payload["firstName"]
+    assert data["lastName"] == payload["lastName"]
+    assert data["age"] == payload["age"]

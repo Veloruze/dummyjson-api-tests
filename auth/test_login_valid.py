@@ -9,7 +9,7 @@ def test_login_valid(base_url):
         "expiresInMins": 30,
     }
 
-    response = requests.post(url, json=payload)
+    response = requests.post(url, json=payload, timeout=10)
     data = response.json()
 
     assert response.status_code == 200
